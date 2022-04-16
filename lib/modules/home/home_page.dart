@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         ),
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
-          children: [const HomeHeader(), const HomeBody()],
+          children: [const HomeHeader(), HomeBody()],
         ),
       ),
       bottomNavigationBar: HomeFooter(),

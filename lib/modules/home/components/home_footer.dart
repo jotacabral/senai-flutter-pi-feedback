@@ -13,11 +13,13 @@ class _HomeFooterState extends State<HomeFooter> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: AppUi.colorB,
+      height: 50,
+      backgroundColor: Colors.white,
+      color: AppUi.colorB,
       items: <Widget>[
-        Icon(Icons.add, size: 30),
-        Icon(Icons.list, size: 30),
-        Icon(Icons.compare_arrows, size: 30),
+        Icon(Icons.add, size: 25),
+        Icon(Icons.list, size: 25),
+        Icon(Icons.compare_arrows, size: 25),
       ],
       onTap: (index) {
         //Handle button tap
