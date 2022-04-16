@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:senai_feedback/shared/components/app_text_field.dart';
 
+import '../../shared/navigator.dart';
+import '../home/home_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -40,9 +43,12 @@ class _LoginPageState extends State<LoginPage> {
                 height: 5,
               ),
               Align(
-                  child: Text(
-                    'Recuperar senha'.toUpperCase(),
-                    style: TextStyle(fontSize: 11, color: Colors.grey),
+                  child: InkWell(
+                    onTap: () => print('...'),
+                    child: Text(
+                      'Recuperar senha'.toUpperCase(),
+                      style: TextStyle(fontSize: 11, color: Colors.grey),
+                    ),
                   ),
                   alignment: Alignment.bottomRight),
               const SizedBox(
@@ -51,7 +57,8 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
-                    onPressed: () => print('logou'), child: Text('LOGIN')),
+                    onPressed: () => push(context, HomePage()),
+                    child: Text('LOGIN')),
               ),
             ],
           ),
