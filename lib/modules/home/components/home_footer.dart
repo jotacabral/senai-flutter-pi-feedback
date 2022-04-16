@@ -17,9 +17,21 @@ class _HomeFooterState extends State<HomeFooter> {
       backgroundColor: Colors.white,
       color: AppUi.colorB,
       items: <Widget>[
-        Icon(Icons.add, size: 25),
-        Icon(Icons.list, size: 25),
-        Icon(Icons.compare_arrows, size: 25),
+        Icon(
+          Icons.add,
+          size: 25,
+          color: Colors.white,
+        ),
+        Icon(
+          Icons.list,
+          size: 25,
+          color: Colors.white,
+        ),
+        Icon(
+          Icons.compare_arrows,
+          size: 25,
+          color: Colors.white,
+        ),
       ],
       onTap: (index) {
         //Handle button tap

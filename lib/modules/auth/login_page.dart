@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:senai_feedback/shared/components/app_text_field.dart';
 
+import '../../shared/app_ui.dart';
 import '../../shared/navigator.dart';
 import '../home/home_page.dart';
 
@@ -57,6 +58,9 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppUi.colorB,
+                    ),
                     onPressed: () => push(context, HomePage()),
                     child: Text('LOGIN')),
               ),

@@ -18,24 +18,26 @@ class HomeCardDash extends StatelessWidget {
       ),
       child: Container(
         width: 145,
-        height: 60,
+        height: 70,
         child: Column(
           children: [
             Text(title!.toUpperCase(),
-                style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
+                    fontSize: 12)),
             Container(
-              width: 60,
+              width: 30,
               height: 30,
               padding: EdgeInsets.all(8),
-              child: Center(
-                child: Text(
-                  total!.toString(),
-                  style: TextStyle(color: Colors.white),
-                ),
+              child: Text(
+                total!.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
               ),
               decoration: BoxDecoration(
                   color: AppUi.colorB, borderRadius: BorderRadius.circular(80)),
-            )
+            ),
           ],
         ),
       ),

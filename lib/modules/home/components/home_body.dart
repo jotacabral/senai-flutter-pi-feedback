@@ -44,8 +44,6 @@ class HomeBody extends StatelessWidget {
               AppUi.colorB,
             ], series: <PieSeries<_PieData, String>>[
               PieSeries<_PieData, String>(
-                  explode: true,
-                  explodeIndex: 0,
                   dataSource: data,
                   xValueMapper: (_PieData data, _) => data.xData,
                   yValueMapper: (_PieData data, _) => data.yData,

@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
               stops: [0.0, 1.0],
               tileMode: TileMode.decal),
         ),
-        child: ListView(
+        child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [const HomeHeader(), HomeBody()],
         ),

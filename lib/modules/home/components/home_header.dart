@@ -17,15 +17,12 @@ class HomeHeader extends StatelessWidget {
       const Align(
         alignment: Alignment.topRight,
         child: Padding(
-          padding: EdgeInsets.all(13.0),
+          padding: EdgeInsets.all(28.0),
           child: Icon(
             Icons.logout,
             color: Colors.white,
           ),
         ),
-      ),
-      const SizedBox(
-        height: 12,
       ),
       builderImageCircular(),
       const SizedBox(
