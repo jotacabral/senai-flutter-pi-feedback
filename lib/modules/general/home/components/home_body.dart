@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:senai_feedback/modules/home/components/home_card_dash.dart';
 import 'package:senai_feedback/shared/app_ui.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'home_card_dash.dart';
 
 class HomeBody extends StatelessWidget {
   HomeBody({Key? key}) : super(key: key);
@@ -19,27 +20,30 @@ class HomeBody extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              // ignore: prefer_const_literals_to_create_immutables
               children: [
+                // ignore: prefer_const_constructors
                 HomeCardDash(
                   title: 'Pendentes',
                   total: 2,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
+                // ignore: prefer_const_constructors
                 HomeCardDash(
                   title: 'Realizados',
                   total: 14,
                 ),
               ],
             ),
-            SfCircularChart(margin: EdgeInsets.all(0), palette: [
+            SfCircularChart(margin: const EdgeInsets.all(0), palette: [
               AppUi.colorA,
               AppUi.colorB,
             ], series: <PieSeries<_PieData, String>>[
@@ -48,14 +52,14 @@ class HomeBody extends StatelessWidget {
                   xValueMapper: (_PieData data, _) => data.xData,
                   yValueMapper: (_PieData data, _) => data.yData,
                   dataLabelMapper: (_PieData data, _) => data.text,
-                  dataLabelSettings: DataLabelSettings(isVisible: true)),
+                  dataLabelSettings: const DataLabelSettings(isVisible: true)),
             ])
           ],
         ),
       ),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
     );
   }

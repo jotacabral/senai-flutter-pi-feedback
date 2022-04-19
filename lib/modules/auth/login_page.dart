@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:senai_feedback/modules/general/general_page.dart';
 import 'package:senai_feedback/shared/components/app_text_field.dart';
-
 import '../../shared/app_ui.dart';
 import '../../shared/navigator.dart';
-import '../home/home_page.dart';
+import '../general/home/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: ElevatedButton.styleFrom(
                       primary: AppUi.colorB,
                     ),
-                    onPressed: () => push(context, HomePage()),
+                    onPressed: () => push(context, GeneralPage()),
                     child: Text('LOGIN')),
               ),
             ],
