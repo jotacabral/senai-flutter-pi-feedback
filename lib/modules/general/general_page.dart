@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:senai_feedback/modules/general/history/history_page.dart';
 import 'package:senai_feedback/modules/general/home/home_page.dart';
+import 'package:senai_feedback/modules/general/shedule/shedule_page.dart';
 import 'package:senai_feedback/shared/app_ui.dart';
 
 class GeneralPage extends StatefulWidget {
@@ -16,7 +18,11 @@ class GeneralPage extends StatefulWidget {
 class _GeneralPageState extends State<GeneralPage> {
   int index = 0;
 
-  List<Widget> pages = [const HomePage(), Container(), Container()];
+  List<Widget> pages = [
+    const HomePage(),
+    const ShedulePage(),
+    const HistoryPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
