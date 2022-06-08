@@ -79,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () async {
                     try {
                       await controller.login(edtEmail!.text, edtSenha!.text);
+                      push(context, GeneralPage());
                     } catch (e) {
                       showDialog(
                           context: context,

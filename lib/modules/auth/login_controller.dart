@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:senai_feedback/models/user_model.dart';
 import 'package:senai_feedback/repositories/auth_repository.dart';
 
-class LoginController extends ChangeNotifier {
+class LoginController {
+  late UserModel userModel;
   final AuthRepository repository = AuthRepository();
 
   Future login(String email, String password) async {
     validateFields(email, password);
+    userModel = await repository.login(email, password);
   }
 
   bool isEmail(String value) => RegExp(
