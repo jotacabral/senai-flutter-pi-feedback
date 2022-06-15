@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:senai_feedback/shared/services/auth_service.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -29,14 +30,14 @@ class HomeHeader extends StatelessWidget {
         height: 5,
       ),
       Text(
-        'Bill Gates'.toUpperCase(),
+        AuthService.to.userLogged!.nome!.toUpperCase(),
         style: GoogleFonts.robotoCondensed(
             fontWeight: FontWeight.w700, color: Colors.white, fontSize: 30),
       ),
-      const Text(
-        'Desenvolvedor de Sistemas',
+      Text(
+        AuthService.to.userLogged!.cargo!.descricao!,
         style:
-            TextStyle(color: Color.fromARGB(166, 255, 255, 255), fontSize: 10),
+            TextStyle(color: Color.fromARGB(166, 255, 255, 255), fontSize: 15),
       )
     ]);
   }

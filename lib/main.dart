@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:senai_feedback/shared/services/auth_service.dart';
 
 import 'modules/splash/splash_page.dart';
 
+GetIt getIt = GetIt.instance;
+
+void setupGetIt() {
+  getIt.registerSingleton<AuthService>(AuthService());
+}
+
 void main() {
+  setupGetIt();
   runApp(MyApp());
 }
 
