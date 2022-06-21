@@ -22,7 +22,7 @@ class HomeCardDash extends StatelessWidget {
         child: Column(
           children: [
             Text(title!.toUpperCase(),
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.openSans(
                     fontWeight: FontWeight.w500,
                     color: Colors.grey,
                     fontSize: 12)),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:senai_feedback/models/feedback.dart';
 
 class CardShedule extends StatelessWidget {
-  const CardShedule({
-    Key? key,
-  }) : super(key: key);
+  final FeedbackModel model;
+  CardShedule({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +15,14 @@ class CardShedule extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '10/20/2022',
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Agendamento'.toUpperCase()),
               Text(
-                'Descrição',
+                  "REUNIÃO AGENDADA, MOTIVO: " + model.descricao.toUpperCase()),
+              Text(
+                "Resumo: " + model.resumo,
                 style: TextStyle(color: Colors.grey),
               ),
             ],
@@ -38,11 +37,6 @@ class CardShedule extends StatelessWidget {
               SizedBox(
                 width: 5,
               ),
-              Icon(
-                Icons.close,
-                color: Colors.red,
-                size: 32,
-              )
             ],
           ),
         ],

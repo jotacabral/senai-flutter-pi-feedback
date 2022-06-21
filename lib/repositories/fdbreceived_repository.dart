@@ -4,19 +4,22 @@ import 'package:senai_feedback/models/feedback.dart';
 import 'package:senai_feedback/shared/const.dart';
 
 class FdbreceivedRepository {
-  Future<List<Feedback>> fetchAll(int id) async {
-    final String url = Const.baseUrl + "feedbacks/$id";
+  Future<List<FeedbackModel>> fetchAll(String urldata) async {
+    final String url = Const.baseUrl + urldata;
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
-      final jsonDec = json.decode(response.body);
+      final List jsonDec = json.decode(utf8.decode(response.bodyBytes));
+
       return jsonDec
-          .map<Feedback>((value) => Feedback.fromJson(value))
+          .map<FeedbackModel>((value) => FeedbackModel.fromJson(value))
           .toList();
     }
 
-    if (response.statusCode != 200)
+    if (response.statusCode != 200) {
       throw Exception("Não foi encontrado nenhum feedback");
+    }
+
     return [];
   }
 }

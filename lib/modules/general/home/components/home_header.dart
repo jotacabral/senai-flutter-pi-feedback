@@ -31,7 +31,7 @@ class HomeHeader extends StatelessWidget {
       ),
       Text(
         AuthService.to.userLogged!.nome!.toUpperCase(),
-        style: GoogleFonts.robotoCondensed(
+        style: GoogleFonts.openSans(
             fontWeight: FontWeight.w700, color: Colors.white, fontSize: 30),
       ),
       Text(

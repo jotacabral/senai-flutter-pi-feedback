@@ -12,9 +12,6 @@ class GeneralPage extends StatefulWidget {
   State<GeneralPage> createState() => _GeneralPageState();
 }
 
-//ListView
-//ListTile
-
 class _GeneralPageState extends State<GeneralPage> {
   int index = 0;
 

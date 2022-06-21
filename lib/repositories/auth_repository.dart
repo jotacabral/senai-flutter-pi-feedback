@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:senai_feedback/models/user_model.dart';
 import 'package:senai_feedback/shared/const.dart';
@@ -10,7 +9,7 @@ class AuthRepository {
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
-      final jsonDec = json.decode(response.body);
+      final jsonDec = json.decode(utf8.decode(response.bodyBytes));
       if (jsonDec["senha"] != senha) {
         throw "Senha invalida!";
       }

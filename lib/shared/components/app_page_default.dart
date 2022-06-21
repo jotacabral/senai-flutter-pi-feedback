@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppPageDefault extends StatelessWidget {
-  final List<Widget>? childrens;
+  final Widget? child;
   final String? titlePage;
 
-  const AppPageDefault({Key? key, this.childrens, this.titlePage})
+  const AppPageDefault({Key? key, this.child, this.titlePage})
       : super(key: key);
 
   @override
@@ -30,12 +30,7 @@ class AppPageDefault extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: ListView(
-                children: childrens!,
-              ),
-            ),
+            child: Padding(padding: const EdgeInsets.all(10.0), child: child),
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.only(

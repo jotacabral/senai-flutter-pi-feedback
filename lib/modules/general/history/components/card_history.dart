@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:senai_feedback/models/feedback.dart';
 
 class CardHistory extends StatelessWidget {
-  const CardHistory({
-    Key? key,
-  }) : super(key: key);
+  final FeedbackModel model;
+
+  CardHistory({required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +15,13 @@ class CardHistory extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '10/20/2022',
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Agendamento'.toUpperCase()),
+              Text("APLICADA: " + model.descricao.toUpperCase()),
               Text(
-                'Descrição',
+                "Descrição: " + model.resumo,
                 style: TextStyle(color: Colors.grey),
               ),
             ],
